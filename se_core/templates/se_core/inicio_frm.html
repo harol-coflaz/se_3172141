@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block titulo %}Contáctanos{% endblock %}
+{% include 'navbar.html' %}
+{% block contenido %}
+    <h1>INICIO DE SESIÓN</h1>
+    <form action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+        <input type="email" name="correo" required placeholder="Ingrese su correo">
+        <input type="password" name="clave" required placeholder="Ingrese su contraseña">
+        <input type="submit" value="Iniciar Sesión">
+    </form>
+    {% if mensaje %}
+        {{ mensaje }}
+    {% endif %}
+
+{% endblock %}
+{% include 'includes/footer.html' %}
