@@ -115,6 +115,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 AUTH_USER_MODEL = 'se_core.Usuarios'
 
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/6.0/topics/i18n/
 
@@ -133,6 +135,9 @@ LOGIN_URL = 'login'
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+]
 
 # Temporización de la sesión
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True

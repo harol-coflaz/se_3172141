@@ -1,0 +1,67 @@
+body {
+    min-height: 100vh;
+    background-image: url("../img/fondo3.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* HERO */
+.hero-section {
+    min-height: 70vh;
+    background: linear-gradient(135deg, rgba(13,110,253,0.9), rgba(11,94,215,0.9));
+    color: white;
+}
+
+/* TÍTULOS */
+.hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* SECCIÓN CARDS */
+
+.cards-section {
+    margin-top: -60px;   /* las sube debajo del hero */
+    padding-bottom: 80px;
+    position: relative;
+    z-index: 2;
+}
+
+/* CARDS */
+.card {
+    width: 100%;
+    max-width: 320px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover */
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+}
+
+/* ANIMACIÓN */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card-animated {
+    animation: fadeUp 0.8s ease forwards;
+}

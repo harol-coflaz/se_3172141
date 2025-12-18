@@ -1,7 +1,87 @@
 {% extends 'base.html' %}
 
-{% block titulo %}Sistema Escolar{% endblock %}
+{% block titulo %}Inicio{% endblock %}
 
 {% block contenido %}
-    <h1 style="text-align: center;">FUNCIONA...</h1>
+
+<section class="hero-section text-center d-flex align-items-center">
+    <div class="container">
+
+        <h1 class="hero-title mb-3">Sistema Escolar</h1>
+
+        <p class="hero-subtitle mb-4">
+            Plataforma de gestión académica para estudiantes y docentes
+        </p>
+
+        {% if not user.is_authenticated %}
+            <a href="{% url 'inicio_sesion' %}" class="btn btn-primary btn-lg me-2">
+                Iniciar Sesión
+            </a>
+            <a href="#" class="btn btn-outline-light btn-lg">
+                Registrarse
+            </a>
+        {% else %}
+            <a href="#" class="btn btn-success btn-lg">
+                Ir al Panel
+            </a>
+        {% endif %}
+
+    </div>
+<section class="cards-section">
+    <div class="container">
+        <div class="row justify-content-center g-4">
+
+            <div class="col-md-4 d-flex justify-content-center">
+                <div class="card card-animated h-100 text-center p-3">
+                    <div class="card-body">
+                        <h5 class="card-title bg-primary text-white py-2 rounded">
+                            Estudiantes
+                        </h5>
+                        <p class="card-text text-primary">
+                            Registro, actualización y seguimiento de estudiantes.
+                        </p>
+                        <a href="#" class="btn btn-outline-primary btn-sm mt-2">
+                            Gestionar estudiantes
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 d-flex justify-content-center">
+                <div class="card card-animated h-100 text-center p-3">
+                    <div class="card-body">
+                        <h5 class="card-title bg-primary text-white py-2 rounded">
+                            Docentes
+                        </h5>
+                        <p class="card-text text-primary">
+                            Administración de docentes y asignaturas.
+                        </p>
+                        <a href="#" class="btn btn-outline-primary btn-sm mt-2">
+                            Ver docentes
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 d-flex justify-content-center">
+                <div class="card card-animated h-100 text-center p-3">
+                    <div class="card-body">
+                        <h5 class="card-title bg-primary text-white py-2 rounded">
+                            Académico
+                        </h5>
+                        <p class="card-text text-primary">
+                            Control de cursos, calificaciones y reportes.
+                        </p>
+                        <a href="#" class="btn btn-outline-primary btn-sm mt-2">
+                            Ir al módulo
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
 {% endblock %}

@@ -8,8 +8,8 @@ from .models import Usuarios
 class UsuarioAdmin(UserAdmin):
     add_form = UsuarioCreationForm
     form = UsuarioChangeForm
-    list_display = ('correo', 'is_staff', 'is_superuser', 'is_active', 'activado_por')
-    list_filter = ('correo', 'is_staff', 'is_superuser', 'is_active', 'activado_por')
+    list_display = ('correo', 'is_staff', 'is_superuser', 'is_active', 'activado_por',)
+    list_filter = ('correo', 'is_staff', 'is_superuser', 'is_active', 'activado_por',)
 
     fieldsets = (
         (None, {'fields': ('correo', 'password')}),
@@ -19,7 +19,7 @@ class UsuarioAdmin(UserAdmin):
     add_fieldsets = (
         (None,{
             'classes': ('wide',),
-            'fields': (
+            'fields':(
                 'correo', 'password1', 'password2', 'is_staff', 'is_active',
                 'groups', 'user_permissions'
             )}

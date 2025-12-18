@@ -1,4 +1,36 @@
-<nav>
+<nav class="navbar">
+    <div class="nav-left">
+        <ul>
+            <li><a href="{% url 'index' %}">Inicio</a></li>
+            <li><a href="{% url 'acerca_de' %}">Acerca de</a></li>
+            <li><a href="{% url 'mision_vision' %}">Misión y Visión</a></li>
+            <li><a href="{% url 'contáctanos' %}">Contáctanos</a></li>
+        </ul>
+    </div>
+
+    <div class="nav-right">
+        <ul>
+            {% if user.is_authenticated %}
+                <li>
+                    <form action="{% url 'logout' %}" method="post" style="display: inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="btn-logout" style="background: none; border: none; cursor: pointer; color: inherit; font: inherit;">
+                            {{ user.get_short_name|default:user.username }} · Cerrar sesión
+                        </button>
+                    </form>
+                </li>
+            {% else %}
+                <!-- <li>
+                    <a href="{% url 'inicio_sesion' %}" class="btn-login">Iniciar sesión</a>
+                </li>
+                <li>
+                    <a href="#" class="btn-registro">Registrarme</a>
+                </li> -->
+            {% endif %}
+        </ul>
+    </div>
+</nav>
+<!-- <nav>
     <ul>
         <li>
             <a href="{% url 'index' %}">Inicio</a>
@@ -12,6 +44,11 @@
         <li>
             <a href="{% url 'contáctanos' %}">Contáctanos</a>
         </li>
+
+
+
+
+
         {% if user.is_authenticated %}
             <li>
                 <a href="#">
@@ -27,4 +64,4 @@
             </li>
         {% endif %}
     </ul>
-</nav>
+</nav> -->
